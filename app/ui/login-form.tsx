@@ -8,16 +8,14 @@ import {
 } from '@heroicons/react/24/outline';
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import { Button } from '@/app/ui/button';
-import { useActionState, useEffect } from 'react';
+import { useActionState } from 'react';
 import { authenticate } from '@/app/lib/actions';
-import { useRouter } from 'next/navigation';
 
 export default function LoginForm() {
   const [errorMessage, formAction, isPending] = useActionState(
     authenticate,
     undefined,
   );
-  const router = useRouter();
 
   return (
     <form action={formAction} className="space-y-3">
